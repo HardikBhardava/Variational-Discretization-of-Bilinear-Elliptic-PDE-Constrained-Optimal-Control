@@ -72,7 +72,7 @@ The forcing term \(f\) and desired state $y_d$ are constructed so that the exact
 
 Weak formulation:
 
-$$ \int_\Omega\nabla y \cdot \nabla v \, dx  + \int_\Omega uy\cdot v \ dx = \int_\Omega f\cdot v \ dx\qquad \qquad \forall v \in H_0^1(\Omega) $$
+$$ \int_\Omega\nabla y \cdot \nabla v \ dx  + \int_\Omega uy\cdot v \ dx = \int_\Omega f\cdot v \ dx\qquad \qquad \forall v \in H_0^1(\Omega) $$
 
 Discretized using linear finite elements.
 
@@ -86,7 +86,7 @@ $$ p = 0 \quad \text{on} \quad \partial\Omega $$
 
 Weak form:
 
-$$ \int_\Omega (\nabla v  \nabla p  +  u  v p) \, dx = \int_\Omega (y - y_d)  v  dx \qquad \qquad \forall v \in H_0^1(\Omega) $$
+$$ \int_\Omega (\nabla v  \nabla p  +  u  v p) \ dx = \int_\Omega (y - y_d)  v \ dx \qquad \qquad \forall v \in H_0^1(\Omega) $$
 
 ## Variational Discretization
 
