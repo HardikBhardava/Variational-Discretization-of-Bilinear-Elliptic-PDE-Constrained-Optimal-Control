@@ -124,9 +124,9 @@ Expected convergence:
 
 | Variable | Expected Order |
 |---|---|
-| State | \(O(h^2)\) |
-| Adjoint | \(O(h^2)\) |
-| Control | \(O(h)\) |
+| State | $O(h^2)$ |
+| Adjoint | $O(h^2)$ |
+| Control | $O(h)$ |
 
 
 # 2. Variational Discretization
@@ -137,20 +137,11 @@ In the variational approach:
 
 The control is reconstructed from
 
-$$
-u_h(x)
-=
-\mathrm{Proj}_{[a,b]}
-\left(
-\frac{1}{\alpha} y_h(x)p_h(x)
-\right)
-$$
+$$ u_h(x) = \mathrm{Proj}_{[a,b]} \left( \frac{1}{\alpha} y_h(x)p_h(x) \right) $$
 
 Since $y_h$ and $p_h$ are linear finite element functions,
 
-$$
-y_h(x)p_h(x)
-$$
+$$ y_h(x)p_h(x) $$
 
 is piecewise quadratic.
 
@@ -165,9 +156,9 @@ Expected convergence:
 
 | Variable | Expected Order |
 |---|---|
-| State | \(O(h^2)\) |
-| Adjoint | \(O(h^2)\) |
-| Control | \(O(h^2)\) |
+| State | $O(h^2)$ |
+| Adjoint | $O(h^2)$ |
+| Control | $O(h^2)$ |
 
 ---
 
@@ -212,8 +203,6 @@ which is assembled:
 - exactly for the variational method,
 - elementwise constant for the P0 method.
 
----
-
 # Exact Polynomial Integration
 
 The variational discretization uses:
@@ -223,7 +212,6 @@ The variational discretization uses:
 
 This avoids quadrature errors in the control reconstruction.
 
----
 
 # Segmented Control Reconstruction
 
@@ -243,19 +231,11 @@ The code analytically computes:
 
 The EOC is computed using
 
-$$
-\mathrm{EOC}
-=
-\frac{
-\log(e_h/e_{h/2})
-}{
-\log(h/(h/2))
-}
-$$
+$$ \mathrm{EOC} = \frac{ \log(e_h/e_{h/2})}{\log(h/(h/2))} $$
 
 where $e_h$ is the numerical error.
 
----
+
 
 # Output
 
@@ -277,8 +257,8 @@ The implementation confirms the theoretical behavior:
 
 | Method | Control Convergence |
 |---|---|
-| P0 constant control | \(O(h)\) |
-| Variational discretization | \(O(h^2)\) |
+| P0 constant control | $O(h)$ |
+| Variational discretization | $O(h^2)$ |
 
 while state and adjoint achieve approximately
 
