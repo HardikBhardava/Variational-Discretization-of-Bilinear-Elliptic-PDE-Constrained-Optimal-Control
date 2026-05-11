@@ -22,7 +22,7 @@ The project is inspired by the variational discretization framework introduced b
 
 We solve the optimal control problem
 
-$$\min_{y \in H_0^1(\Omega) ,u \in L^2(\Omega} J(y,u) = \frac12 \Vert y-y_d \Vert_{L^2(\Omega)}^2 + \frac{\alpha}{2}\Vert u \Vert_{L^2(\Omega)}^2 $$
+$$\min_{y \in H_0^1(\Omega) ,u \in L^2(\Omega) } J(y,u) = \frac12 \Vert y-y_d \Vert_{L^2(\Omega)}^2 + \frac{\alpha}{2}\Vert u \Vert_{L^2(\Omega)}^2 $$
 
 subject to the bilinear elliptic PDE
 
@@ -80,14 +80,7 @@ $$
 
 ## Exact Control
 
-$$
-u(x)
-=
-\mathrm{Proj}_{[a,b]}
-\left(
-\frac{1}{\alpha} y(x)p(x)
-\right)
-$$
+$$ u(x) = \mathrm{Proj}_{[a,b]} \left( \frac1\alpha y(x)p(x) \right) $$
 
 with
 
