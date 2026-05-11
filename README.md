@@ -172,7 +172,7 @@ $$ -\Delta p^* + u^* p^* = (y^* - y_d)  \quad\text{in} \quad  \Omega $$
 
 ## Variational Inequality
 
-$$ ( \alpha u^* - y^* p^*, v-u^* ) \ge 0 $$
+$$ (\alpha u^* - y^*p^*,\, v-u^*) \ge 0 $$
 
 which leads to the projection formula
 
