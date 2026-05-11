@@ -84,8 +84,7 @@ $$ -\Delta p  + u p = (y - y_d)  \quad\text{in} \quad  \Omega $$
 
 with boundary conditions
 
-
-$$ p &= 0 \quad \text{on} \quad \partial\Omega $$
+$$ p = 0 \quad \text{on} \quad \partial\Omega $$
 
 Weak form:
 
