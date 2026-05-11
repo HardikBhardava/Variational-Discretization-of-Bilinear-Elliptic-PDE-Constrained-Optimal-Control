@@ -12,32 +12,21 @@ This project reproduces and studies the convergence behavior discussed in:
 
 # Problem Statement
 
-\begin{aligned} 
-     \min_{y \in H_0^1(\Omega) ,u \in L^2(\Omega)} \; J(y,u) &= \frac{1}{2} \int_\Omega (y - y_d)^2 \; dx + \frac{\alpha}{2} \, \int_\Omega u^2 \, dx \\
-    \text{subject to } -\Delta y \; +uy &= f  \quad\text{in} \: \Omega \\
-    y &= 0 \quad \text{on} \: \Gamma \: (\partial\Omega) \\
-    \text{with } 0 < a \leq &u \leq b \; \text{ a.e. in } \Omega   
-\end{aligned}
-
 We solve the following optimal control problem:
 
-$$\min_{u,y} J(y,u) = \frac12 \Vert y-y_d \Vert_{L^2(\Omega)}^2 + \frac{\alpha}{2}\Vert u \Vert_{L^2(\Omega)}^2 $$
+$$\min_{y \in H_0^1(\Omega) ,u \in L^2(\Omega} J(y,u) = \frac12 \Vert y-y_d \Vert_{L^2(\Omega)}^2 + \frac{\alpha}{2}\Vert u \Vert_{L^2(\Omega)}^2 $$
 
 subject to the bilinear elliptic PDE
 
-$$ -y'' + uy = f \quad \text{in } (0,1) $$
+$$ -\Delta y \; +uy &= f \quad \text{in } \quad \Omega =(0,1) $$
 
 with homogeneous Dirichlet boundary conditions
 
-\[
-y(0)=y(1)=0
-\]
+$$ y(0)=y(1)=0 $$
 
 and box constraints on the control
 
-\[
-0 < a \le u(x) \le b.
-\]
+$$ 0 < a \le u(x) \le b $$
 
 ---
 
@@ -45,42 +34,25 @@ and box constraints on the control
 
 The project uses a manufactured solution inspired by Example 6.2 from Kröner & Vexler:
 
-\[
-y(x)=x(1-x)
-\]
+$$ y(x)=x(1-x) $$
 
-\[
-p(x)=0.05\sin(\pi x)
-\]
+$$ p(x)=0.05\sin(\pi x) $$
 
 Control obtained from the projection formula:
 
-\[
-u(x)
-=
-\mathrm{Proj}_{[a,b]}
-\left(
-\frac1\alpha y(x)p(x)
-\right)
-\]
+$$ u(x) = \mathrm{Proj}_{[a,b]} \left( \frac1\alpha y(x)p(x) \right) $$
 
 with
 
-\[
-\alpha = 0.01,
-\quad
-a=0.1,
-\quad
-b=0.3
-\]
+$$ \alpha = 0.01, \quad a=0.1, \quad b=0.3$$
 
-The forcing term \(f\) and desired state \(y_d\) are constructed so that the exact solution satisfies the KKT system.
+The forcing term \(f\) and desired state $y_d$ are constructed so that the exact solution satisfies the KKT system.
 
 ---
 
 # Features
 
-- 1D finite element discretization (P1 FEM)
+- 1D finite element discretization of state $y$
 - Bilinear PDE-constrained optimization
 - Variational discretization of control
 - Explicit segmented control representation
@@ -94,19 +66,13 @@ The forcing term \(f\) and desired state \(y_d\) are constructed so that the exa
 
 ---
 
-# Numerical Method
+# Numerical Method(FEM)
 
 ## State Equation
 
 Weak formulation:
 
-\[
-\int_0^1 y'v' \, dx
-+
-\int_0^1 u y v \, dx
-=
-\int_0^1 f v \, dx
-\]
+$$ \int_\Omega\nabla y \cdot \nabla v \, dx  + \int_\Omega uy\cdot v \ dx = \int_\Omega f\cdot v \ dx\qquad \qquad \forall v \in H_0^1(\Omega) $$
 
 Discretized using linear finite elements.
 
@@ -114,19 +80,14 @@ Discretized using linear finite elements.
 
 ## Adjoint Equation
 
-\[
--p'' + up = y-y_d
-\]
+$$ -\Delta p \; +u p &= (y - y_d)  \quad\text{in} \: \:  \Omega $$
+with boundary conditions 
+
+$$ p &= 0 \quad \text{on} \:  \: \partial\Omega $$
 
 Weak form:
 
-\[
-\int_0^1 p'v' \, dx
-+
-\int_0^1 upv \, dx
-=
-\int_0^1 (y-y_d)v \, dx
-\]
+$$ \int_\Omega (\nabla v \, \nabla p \, + \, u \, v\,p) \, dx = \int_\Omega (y - y_d) \, v \, dx \qquad \qquad \forall v \in H_0^1(\Omega) $$
 
 ---
 
@@ -136,20 +97,11 @@ The control is **not discretized directly**.
 
 Instead, the optimality condition is used:
 
-\[
-u(x)
-=
-\mathrm{Proj}_{[a,b]}
-\left(
-\frac1\alpha y_h(x)p_h(x)
-\right)
-\]
+$$ u(x) = \mathrm{Proj}_{[a,b]} \left( \frac1\alpha y_h(x)p_h(x) \right) $$
 
-Since \(y_h\) and \(p_h\) are P1 finite element functions:
+Since $y_h$ and $p_h$ are linear(P1) finite element functions:
 
-\[
-y_h p_h
-\]
+$$ y_h p_h $$
 
 is piecewise quadratic.
 
@@ -167,9 +119,9 @@ Expected theoretical convergence:
 
 | Variable | Expected Order |
 |---|---|
-| State \(y_h\) | \(O(h^2)\) |
-| Adjoint \(p_h\) | \(O(h^2)\) |
-| Variational Control \(u_h\) | \(O(h^2)\) |
+| State $y_h$ | $O(h^2)$ |
+| Adjoint $p_h$ | $O(h^2)$ |
+| Variational Control $u_h$ | $O(h^2)$ |
 
 The implementation computes:
 - L2 errors
@@ -183,9 +135,7 @@ The implementation computes:
 
 The implementation avoids numerical quadrature for the control matrix:
 
-\[
-\int u(x)\phi_i\phi_j \, dx
-\]
+$$ \int u(x)\phi_i\phi_j \, dx $$
 
 using:
 - polynomial multiplication,
@@ -221,32 +171,19 @@ The optimality system consists of:
 
 ## State Equation
 
-\[
--y'' + uy = f
-\]
+$$ -\Delta y \; +uy &= f \quad \text{in } \quad \Omega $$
 
 ## Adjoint Equation
 
-\[
--p'' + up = y-y_d
-\]
+$$ -\Delta p \; +u p &= (y - y_d)  \quad\text{in} \: \:  \Omega $$
 
 ## Variational Inequality
 
-\[
-(\alpha u - yp, v-u)\ge0
-\]
+$$ (\alpha u - yp, v-u)\ge0 $$
 
 which leads to the projection formula
 
-\[
-u
-=
-\mathrm{Proj}_{[a,b]}
-\left(
-\frac1\alpha yp
-\right)
-\]
+$$ u = \mathrm{Proj}_{[a,b]} \left( \frac1\alpha yp \right) $$
 
 ---
 
@@ -273,13 +210,9 @@ The implementation uses:
 - Exact polynomial integration
 - Piecewise quadratic control reconstruction
 
-The control-dependent matrix is:
+The control-dependent mass matrix is:
 
-\[
-C(u)_{ij}
-=
-\int_0^1 u(x)\phi_i(x)\phi_j(x)\,dx
-\]
+$$ M(u)_{ij} = \int_0^1 u(x)\phi_i(x)\phi_j(x)\,dx $$
 
 which is assembled exactly element-by-element.
 
@@ -289,17 +222,9 @@ which is assembled exactly element-by-element.
 
 The EOC is computed using
 
-\[
-\mathrm{EOC}
-=
-\frac{
-\log(e_h/e_{h/2})
-}{
-\log(h/(h/2))
-}
-\]
+$$\mathrm{EOC} = \frac{ \log(e_h/e_{h/2}) }{ \log(h/(h/2)) } $$
 
-where \(e_h\) denotes the numerical error.
+where $e_h$ denotes the numerical error.
 
 ---
 
