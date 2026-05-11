@@ -88,15 +88,13 @@ Weak form:
 
 $$ \int_\Omega (\nabla v \, \nabla p \, + \, u \, v\,p) \, dx = \int_\Omega (y - y_d) \, v \, dx \qquad \qquad \forall v \in H_0^1(\Omega) $$
 
----
-
 ## Variational Discretization
 
 The control is **not discretized directly**.
 
 Instead, the optimality condition is used:
 
-$$ u(x) = \mathrm{Proj}_{[a,b]} \left( \frac1\alpha y_h(x)p_h(x) \right) $$
+$$ u(x) = \mathrm{Proj}_{[a,b]} \left( \frac1\alpha y_h(u(x)) p_h(u(x)) \right) $$
 
 Since $y_h$ and $p_h$ are linear(P1) finite element functions:
 
@@ -140,8 +138,6 @@ using:
 - polynomial multiplication,
 - exact symbolic integration on segments.
 
----
-
 ## Segmented Projection
 
 Each element is split into:
@@ -150,8 +146,6 @@ Each element is split into:
 - upper active set.
 
 This reproduces the variational discretization idea introduced by Prof. Dr. Michael Hinze.
-
----
 
 # Example Output
 
@@ -170,19 +164,19 @@ The optimality system consists of:
 
 ## State Equation
 
-$$ -\Delta y  + uy = f \quad \text{in } \quad \Omega $$
+$$ -\Delta y^*  + u^* y^* = f \quad \text{in } \quad \Omega $$
 
 ## Adjoint Equation
 
-$$ -\Delta p + u p = (y - y_d)  \quad\text{in} \quad  \Omega $$
+$$ -\Delta p^* + u^* p^* = (y^* - y_d)  \quad\text{in} \quad  \Omega $$
 
 ## Variational Inequality
 
-$$ (\alpha u - yp, v-u)\ge0 $$
+$$ (\alpha u^* - y^*p^*, v-u^*)\ge0 $$
 
 which leads to the projection formula
 
-$$ u = \mathrm{Proj}_{[a,b]} \left( \frac1\alpha yp \right) $$
+$$ u^* = \mathrm{Proj}_{[a,b]} \left( \frac1\alpha y^*(u) p^*(u) \right) $$
 
 ---
 
