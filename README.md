@@ -76,8 +76,6 @@ $$ \int_\Omega\nabla y \cdot \nabla v \, dx  + \int_\Omega uy\cdot v \ dx = \int
 
 Discretized using linear finite elements.
 
----
-
 ## Adjoint Equation
 
 $$ -\Delta p  + u p = (y - y_d)  \quad\text{in} \quad  \Omega $$
