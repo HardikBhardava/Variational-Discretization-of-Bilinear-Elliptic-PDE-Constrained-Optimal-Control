@@ -82,7 +82,8 @@ Discretized using linear finite elements.
 
 $$ -\Delta p  + u p = (y - y_d)  \quad\text{in} \quad  \Omega $$
 
-with boundary conditions 
+with boundary conditions
+
 
 $$ p &= 0 \quad \text{on} \quad \partial\Omega $$
 
