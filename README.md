@@ -150,7 +150,7 @@ Each element is split into:
 - lower active set,
 - upper active set.
 
-This reproduces the variational discretization idea discussed by Prof. Dr. Michael Hinze 
+This reproduces the variational discretization idea introduced by Prof. Dr. Michael Hinze.
 
 ---
 
