@@ -14,13 +14,7 @@ This project reproduces and studies the convergence behavior discussed in:
 
 We solve the following optimal control problem:
 
-$$ \min_{u,y}
-J(y,u)
-=
-\frac12 \|y-y_d\|_{L^2(\Omega)}^2
-+
-\frac{\alpha}{2}\|u\|_{L^2(\Omega)}^2
-$$
+$$\min_{u,y} J(y,u) = \frac12 \|y-y_d\|_{L^2(\Omega)}^2 + \frac{\alpha}{2}\|u\|_{L^2(\Omega)}^2 $$
 
 subject to the bilinear elliptic PDE
 
