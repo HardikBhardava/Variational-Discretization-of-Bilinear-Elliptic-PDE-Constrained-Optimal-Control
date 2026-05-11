@@ -12,16 +12,20 @@ This project reproduces and studies the convergence behavior discussed in:
 
 # Problem Statement
 
+\begin{aligned} 
+     \min_{y \in H_0^1(\Omega) ,u \in L^2(\Omega)} \; J(y,u) &= \frac{1}{2} \int_\Omega (y - y_d)^2 \; dx + \frac{\alpha}{2} \, \int_\Omega u^2 \, dx \\
+    \text{subject to } -\Delta y \; +uy &= f  \quad\text{in} \: \Omega \\
+    y &= 0 \quad \text{on} \: \Gamma \: (\partial\Omega) \\
+    \text{with } 0 < a \leq &u \leq b \; \text{ a.e. in } \Omega   
+\end{aligned}
+
 We solve the following optimal control problem:
 
-$$\min_{u,y} J(y,u) = \frac12 \Vert y-y_d \Vert_{L^2(\Omega)}^2 + \frac{\alpha}{2}\|u\|_{L^2(\Omega)}^2 $$
+$$\min_{u,y} J(y,u) = \frac12 \Vert y-y_d \Vert_{L^2(\Omega)}^2 + \frac{\alpha}{2}\Vert u \Vert_{L^2(\Omega)}^2 $$
 
 subject to the bilinear elliptic PDE
 
-\[
--y'' + uy = f
-\quad \text{in } (0,1)
-\]
+$$ -y'' + uy = f \quad \text{in } (0,1) $$
 
 with homogeneous Dirichlet boundary conditions
 
