@@ -270,31 +270,12 @@ for both methods.
 
 <table>
   <tr>
-    <td align="center">
-      <img src="images\eoc_control_constant_vs_variational.png" width="400"/>
-      <br>
-      <b>State Error</b>
-    </td>
-
-    <td align="center">
-      <img src="images/exact_vs_variational_vs_constant_control.png" width="400"/>
-      <br>
-      <b>Adjoint Error</b>
-    </td>
+    <td><img src="images/eoc_control_constant_vs_variational.png" width="100%"></td>
+    <td><img src="images/exact_vs_variational_vs_constant_control.png" width="100%"></td>
   </tr>
-
   <tr>
-    <td align="center">
-      <img src="images/exact_vs_variational_vs_constant_control with 32.png" width="400"/>
-      <br>
-      <b>Control Error</b>
-    </td>
-
-    <td align="center">
-      <img src="images/exact_vs_variational_vs_constant_control with 256.png" width="400"/>
-      <br>
-      <b>Convergence Rates</b>
-    </td>
+    <td><img src="images/exact_vs_variational_vs_constant_control with 32.png" width="100%"></td>
+    <td><img src="images/exact_vs_variational_vs_constant_control with 256.png" width="100%"></td>
   </tr>
 </table>
 
