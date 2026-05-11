@@ -48,30 +48,17 @@ The first-order optimality system consists of:
 
 $$ -\Delta y + uy = f \quad \text{in } \quad \Omega =(0,1) $$
 
-
-
 ## Adjoint Equation
 
 $$ -\Delta p + up = y - y_d \quad \text{in } \quad \Omega =(0,1) $$
 
----
-
 ## Variational Inequality
 
-$$
-(\alpha u^\ast - y^\ast p^\ast,\; v-u^\ast) \ge 0
-$$
+$$ (\alpha u^\ast - y^\ast p^\ast, v-u^\ast)_{L^2(\Omega)} \ge 0 $$
 
 which leads to the projection formula
 
-$$
-u^\ast
-=
-\mathrm{Proj}_{[a,b]}
-\left(
-\frac{1}{\alpha} y^\ast p^\ast
-\right)
-$$
+$$ u^* = \mathrm{Proj}_{[a,b]} \left( \frac{1}{\alpha} y^* (u) p^* (u) \right) $$
 
 ---
 
