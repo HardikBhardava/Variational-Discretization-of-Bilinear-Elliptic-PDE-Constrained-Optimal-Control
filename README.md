@@ -18,7 +18,7 @@ $$\min_{y \in H_0^1(\Omega) ,u \in L^2(\Omega} J(y,u) = \frac12 \Vert y-y_d \Ver
 
 subject to the bilinear elliptic PDE
 
-$$ -\Delta y \; +uy &= f \quad \text{in } \quad \Omega =(0,1) $$
+$$ -\Delta y \; +uy = f \quad \text{in } \quad \Omega =(0,1) $$
 
 with homogeneous Dirichlet boundary conditions
 
@@ -80,7 +80,7 @@ Discretized using linear finite elements.
 
 ## Adjoint Equation
 
-$$ -\Delta p \; +u p &= (y - y_d)  \quad\text{in} \: \:  \Omega $$
+$$ -\Delta p \; +u p = (y - y_d)  \quad\text{in} \: \:  \Omega $$
 with boundary conditions 
 
 $$ p &= 0 \quad \text{on} \:  \: \partial\Omega $$
@@ -171,11 +171,11 @@ The optimality system consists of:
 
 ## State Equation
 
-$$ -\Delta y \; +uy &= f \quad \text{in } \quad \Omega $$
+$$ -\Delta y \; +uy = f \quad \text{in } \quad \Omega $$
 
 ## Adjoint Equation
 
-$$ -\Delta p \; +u p &= (y - y_d)  \quad\text{in} \: \:  \Omega $$
+$$ -\Delta p \; +u p = (y - y_d)  \quad\text{in} \: \:  \Omega $$
 
 ## Variational Inequality
 
