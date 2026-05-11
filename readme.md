@@ -7,11 +7,11 @@ This project implements and compares two finite element approaches for a **bilin
 2. **Variational discretization with segmented control reconstruction**
 
 The implementation studies:
-- finite element discretization,
-- optimality systems,
-- control projection formulas,
-- convergence behavior,
-- experimental orders of convergence (EOC),
+- finite element discretization
+- optimality systems
+- control projection formulas
+- convergence behavior
+- experimental orders of convergence (EOC)
 - exact vs discrete solution comparison.
 
 The project is inspired by the variational discretization framework introduced by Prof.Dr. Michael Hinze and the error analysis of Kröner & Vexler.
