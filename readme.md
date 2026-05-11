@@ -193,11 +193,7 @@ using linear finite element basis functions.
 
 The bilinear term produces the matrix
 
-$$
-C(u)_{ij}
-=
-\int_0^1 u(x)\phi_i(x)\phi_j(x)\,dx
-$$
+$$ C(u)_{ij} = \int_0^1 u(x)\phi_i(x)\phi_j(x)\,dx $$
 
 which is assembled:
 - exactly for the variational method,
