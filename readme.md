@@ -46,11 +46,11 @@ The first-order optimality system consists of:
 
 ## State Equation
 
-$$ -\Delta y^* + u^*y^* = f \quad \text{in } \quad \Omega =(0,1) $$
+$$ -\Delta y^*  + u^* y^* = f \quad \text{in } \quad \Omega $$
 
 ## Adjoint Equation
 
-$$ -\Delta p^* + u^*p^* = y^* - y_d \quad \text{in } \quad \Omega =(0,1) $$
+$$ -\Delta p^* + u^* p^* = (y^* - y_d)  \quad\text{in} \quad  \Omega $$
 
 ## Variational Inequality
 
