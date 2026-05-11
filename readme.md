@@ -100,8 +100,6 @@ The forcing term $f$ and desired state $y_d$ are constructed so that the exact s
 
 The project compares two different control discretization strategies.
 
----
-
 # 1. Piecewise Constant (P0) Control
 
 The control is discretized elementwise:
@@ -120,15 +118,7 @@ The algorithm:
 
 The control update is based on the averaged quantity
 
-$$
-u_h
-=
-\mathrm{Proj}_{[a,b]}
-\left(
-\frac{1}{\alpha h}
-\int_K y_hp_h\,dx
-\right)
-$$
+$$ u_h = \mathrm{Proj}_{[a,b]} \left( \frac{1}{\alpha h} \int_K y_hp_h\,dx \right) $$
 
 Expected convergence:
 
@@ -138,7 +128,6 @@ Expected convergence:
 | Adjoint | \(O(h^2)\) |
 | Control | \(O(h)\) |
 
----
 
 # 2. Variational Discretization
 
