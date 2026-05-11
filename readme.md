@@ -46,11 +46,11 @@ The first-order optimality system consists of:
 
 ## State Equation
 
-$$ -\Delta y + uy = f \quad \text{in } \quad \Omega =(0,1) $$
+$$ -\Delta y^* + u^*y^* = f \quad \text{in } \quad \Omega =(0,1) $$
 
 ## Adjoint Equation
 
-$$ -\Delta p + up = y - y_d \quad \text{in } \quad \Omega =(0,1) $$
+$$ -\Delta p^* + u^*p^* = y^* - y_d \quad \text{in } \quad \Omega =(0,1) $$
 
 ## Variational Inequality
 
@@ -92,7 +92,7 @@ a=0.1,
 b=0.3
 $$
 
-The forcing term $f$ and desired state $ y_d $ are constructed so that the exact solution satisfies the full KKT system.
+The forcing term $f$ and desired state $y_d$ are constructed so that the exact solution satisfies the full KKT system.
 
 ---
 
