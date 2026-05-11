@@ -86,7 +86,7 @@ $$ p = 0 \quad \text{on} \quad \partial\Omega $$
 
 Weak form:
 
-$$ \int_\Omega (\nabla v \, \nabla p \, + \, u \, v\,p) \, dx = \int_\Omega (y - y_d) \, v \, dx \qquad \qquad \forall v \in H_0^1(\Omega) $$
+$$ \int_\Omega (\nabla v  \nabla p  +  u  v p) \, dx = \int_\Omega (y - y_d)  v  dx \qquad \qquad \forall v \in H_0^1(\Omega) $$
 
 ## Variational Discretization
 
